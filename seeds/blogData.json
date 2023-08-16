@@ -1,23 +1,22 @@
 [
   {
     "title": "Phantom Vibration Syndrome",
-    "description": "It is the name for when someone thinks their phone is vibrating, but it isn’t",
-    "user_id": 1
+    "description": "It is the name for when someone thinks their phone is vibrating, but it isn’t"
   },
   {
-    "name": "Firefox Logo",
+    "title": "Firefox Logo",
     "description": "The Firefox Logo is actually a red panda."
   },
   {
-    "name": "Petabyte",
+    "title": "Petabyte",
     "description": "A petabyte is equivalent to 1024 terabytes."
   },
   {
-    "name": "Alexa",
+    "title": "Alexa",
     "description": "She is always listening to make sure she doesn't miss anything you ask her to do."
   },
   {
-    "name": "Online Dating",
+    "title": "Online Dating",
     "description": "40% of Americans met their partner online."
   }
 ]
