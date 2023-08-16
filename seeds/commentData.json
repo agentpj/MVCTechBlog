@@ -1,0 +1,22 @@
+[
+    {
+      "description": "I had no idea.",
+      "blog_id": 1
+    },
+    {
+      "description": "Surely looks like a fox.",
+      "blog_id": 2
+    },
+    {
+      "description": "That's alot of bytes.",
+      "blog_id": 3
+    },
+    {
+      "description": "Alexa always listens.",
+      "blog_id": 4
+    },
+    {
+      "description": "I need to try that then!",
+      "blog_id": 5
+    }
+  ]

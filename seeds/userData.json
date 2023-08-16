@@ -13,5 +13,15 @@
     "name": "Amiko",
     "email": "amiko2k20@aol.com",
     "password": "password12345"
+  },
+  {
+    "name": "Jennifer",
+    "email": "jen0@yahoo.com",
+    "password": "bassword12345"
+  },
+  {
+    "name": "Zach",
+    "email": "zack@me.com",
+    "password": "sassyword12345"
   }
 ]
