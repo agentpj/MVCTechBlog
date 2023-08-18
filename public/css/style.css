@@ -51,6 +51,15 @@ header nav a, .no-button {
 }
 
 /* for the Tech Blog heading under Blog handlebar */
-h1 a {
+h1 {
   color: rgb(121, 121, 171);
+}
+
+.container {
+  width: 85%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  border:rgb(121, 121, 171)
 }

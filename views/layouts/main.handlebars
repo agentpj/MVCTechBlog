@@ -17,11 +17,14 @@
         <a href="/">Home</a> 
         </li>
          <li>
-        <a href="/blog">Dashboard</a>
+        <a href="/dashboard"> Dashboard</a>
         </li>
         <li>
        <a href="/login">Login</a>
        </li>
+        {{!-- <li>
+        <a href="/logout">Logout</a>
+        </li> --}}
         <li>
         <button class="no-button" id="logout">Logout</button>
         </li>
@@ -39,7 +42,7 @@
 
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
-  <script src="/js/logout.js"></script>
+  <script src="./js/logout.js" ></script>
   {{/if}}
 </body>
 

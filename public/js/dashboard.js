@@ -1,21 +1,21 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector('#blog-title').value.trim();
+  const title = document.querySelector('#blog-title').value.trim();
   const description = document.querySelector('#blog-desc').value.trim();
 
-  if (name && description) {
+  if (title && description) {
     const response = await fetch(`/api/blogs`, {
       method: 'POST',
       // must really add the user_id here
-      body: JSON.stringify({ name, description}),
+      body: JSON.stringify({ title, description }),
       headers: {
         'Content-Type': 'application/json',
       },
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('/dashboard');
     } else {
       alert('Failed to create blog');
     }
@@ -31,7 +31,7 @@ const delButtonHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('/dashboard');
     } else {
       alert('Failed to delete blog');
     }
