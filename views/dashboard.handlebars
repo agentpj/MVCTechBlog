@@ -2,12 +2,12 @@
   <h1>
       Your Dashboard
   </h1>
-    <h2>Welcome, {{name}} {{id}} !</h2>
+    <h2>Welcome, {{name}}!</h2>
 </div>
 
 <div>
-  <div class="col-md-6">
-    <h3>Create a New Blog:</h3>
+  <div class="card mb-6">
+    <h4>Create a New Blog:</h4>
 
     <form class="form new-blog-form">
       <div class="form-group">
@@ -25,22 +25,23 @@
     </form>
   </div>
 
-  {{!-- {{#if blog.length}} --}}
-  <div class= "col-md-6 blog-list">
-    <h3>Current Blogs:</h3>
+  
+  <div class= "card md-6 blog-list">
+    <h4>Current Blogs:</h4>
 
     {{#each blogs as |blog|}}
-    <div class="row mb-2">
+    <div class="mb-2">
       <p>
-                <h4><a href="/blog/{{blog.id}}">{{blog.title}}</a></h4>
+                <h3><a href="/blog/{{blog.id}}">{{blog.title}}</a></h3>
       </p>
       <p>
+        <button class="btn btn-sm" data-id="{{blog.id}}">           UPDATE </button>
         <button class="btn btn-sm btn-danger" data-id="{{blog.id}}">          DELETE</button>
       </p>
     </div>
     {{/each}}
   </div>
-  {{!-- {{/if}} --}}
+  
 </div>
 
 <script src="./js/dashboard.js"></script>
