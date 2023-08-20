@@ -12,7 +12,18 @@ router.post('/', withAuth, async (req, res) => {
 
     res.status(200).json(newBlog);
   } catch (err) {
-    res.status(400).json({ message: 'No blog was create!' });
+    res.status(400).json({ message: 'No blog was created!' });
+  }
+});
+
+router.put('/:id', withAuth, (req, res) => {
+  try {
+    const updateBlog = Blog.update(req.body, {
+      where: { id: req.session.user_id, },
+    } )
+    res.status(200).json(updateBlog);
+  } catch (err) {
+    res.status(400).json({ message: 'No blog was updated!' });
   }
 });
 

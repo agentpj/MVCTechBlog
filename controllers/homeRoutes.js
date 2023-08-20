@@ -32,16 +32,13 @@ router.get('/', async (req, res) => {
 router.get('/blog/:id', async (req, res) => {
   try {
     const blogData = await Blog.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
+      include: [ { model: User,
+          attributes: ['name'], },
+        { model: Comment,
+        attributes: ['description', 'date_created'] } ],
     });
 
     const blog = blogData.get({ plain: true });
-
     res.render('blog', {
       ...blog,
       logged_in: req.session.logged_in
@@ -49,9 +46,6 @@ router.get('/blog/:id', async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
-
-
-
 });
 
 // Use withAuth middleware to prevent access to route

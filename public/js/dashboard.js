@@ -22,6 +22,22 @@ const newFormHandler = async (event) => {
   }
 };
 
+const updateButtonHandler = async (event) => {
+  if (event.target.hasAttribute('update-id')) {
+    const updateId = event.target.getAttribute('update-id');
+
+    const response = await fetch(`/api/blogs/${updateId}`, {
+      method: 'PUT',
+    });
+
+    if (response.ok) {
+      document.location.replace('/dashboard');
+    } else {
+      alert('Failed to update blog');
+    }
+  }
+};
+
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
@@ -43,5 +59,11 @@ document
   .addEventListener('submit', newFormHandler);
 
 document
-  .querySelector('.blog-list')
+  .querySelector('.update-btn')
   .addEventListener('click', delButtonHandler);
+
+document
+  .querySelector('.delete-btn')
+  .addEventListener('click', delButtonHandler);
+
+  
