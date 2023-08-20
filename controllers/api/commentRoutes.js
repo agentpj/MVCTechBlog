@@ -2,13 +2,15 @@ const router = require('express').Router();
 const { Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+console.log("INSIDE COMMENT ROUTES ");
+
 router.post('/', withAuth, async (req, res) => {
     try {
       const newComment = await Comment.create({
         ...req.body,
         user_id: req.session.user_id,
       });
-  
+      console.log("NEWCOMMENT ", newComment);
       res.status(200).json(newComment);
     } catch (err) {
       res.status(400).json({ message: 'No comment was created!' });
@@ -29,7 +31,7 @@ router.post('/', withAuth, async (req, res) => {
       const getCommentbyId = Comment.findAll(req.body, {
         where: { id: req.params.id, },
       } )
-     .then(getComentbyId = res.json(getCommentbyId))
+     .then(getCommentbyId = res.json(getCommentbyId))
     } catch (err) {
       res.status(500).json(err);
     }

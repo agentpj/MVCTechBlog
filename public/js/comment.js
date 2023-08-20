@@ -1,13 +1,15 @@
 const newCommentHandler = async (event) => {
   event.preventDefault();
 
-  console.log("inside comment.js");
+  console.log("INSIDE COMMENT.JS");
   const description = document.querySelector('#blog-comment').value.trim();
+  const blog_id = window.location.toString().split('/')[
+    window.location.toString().split('/').length - 1 ];
+ 
+  console.log(blog_id);
 
   if (description) {
-    if (event.target.hasAttribute('data-blogId')) {
-      const blog_id = event.target.getAttribute('data-blogId');
-      consol.log("inside if description");
+      console.log(description);
       const response = await fetch(`/api/comments`, {
         method: 'POST',
         // must really add the user_id here
@@ -16,16 +18,15 @@ const newCommentHandler = async (event) => {
           'Content-Type': 'application/json',
         },
       })
-    
-    //document.location.reload();
 
     if (response.ok) {
-      document.location.replace('/blog');
+      document.location.reload();
+      //document.location.replace('/blog/${id}');
     } else {
       alert('Failed to create comment');
     }
   }
-}};
+};
 
   document
     .querySelector('.new-comment-form')
