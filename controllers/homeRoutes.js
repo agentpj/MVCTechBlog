@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const { Blog, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
-console.log("inside homeroutes");
 
 router.get('/', async (req, res) => {
   try {

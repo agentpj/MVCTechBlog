@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
-console.log("inside userRoutes.js");
 
 router.post('/', async (req, res) => {
   try {

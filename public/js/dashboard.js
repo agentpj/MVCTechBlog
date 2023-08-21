@@ -44,10 +44,6 @@ document
   .addEventListener('submit', newFormHandler);
 
 document
-  .querySelector('.update-btn')
-  .addEventListener('click', delButtonHandler);
-
-document
   .querySelector('.delete-btn')
   .addEventListener('click', delButtonHandler);
 
