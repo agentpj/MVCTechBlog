@@ -69,7 +69,20 @@ When a user logs out, the user gets verification that they have signed out.
 
 The mini project code for lesson 28 was used as the starter code.
 
+To run this site you must do the following in your terminal first:
+Seed the database:
+log into mysql
+mysql -u root -p 
+enter your mysql password
+exit mysql by entering bye;
+SOURCE db/seeds.js
+Once the techblog_db database has been seeded, you can run server.js from the terminal then open your web browser and enter localhost:3001
+
 GitHub repository link:
 https://github.com/agentpj/MVCTechBlog
 
 GitHub deployed link:
+https://agentpj.github.io/MVCTechBlog/
+
+Screenshot of deployed project:
+![Alt text](./public/images/2023-08-21.png)
