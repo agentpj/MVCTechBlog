@@ -16,17 +16,6 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-router.put('/:id', withAuth, (req, res) => {
-  try {
-    const updateBlog = Blog.update(req.body, {
-      where: { id: req.session.user_id, },
-    } )
-    res.status(200).json(updateBlog);
-  } catch (err) {
-    res.status(400).json({ message: 'No blog was updated!' });
-  }
-});
-
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const blogData = await Blog.destroy({

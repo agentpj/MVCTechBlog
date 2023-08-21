@@ -31,11 +31,12 @@ router.get('/', async (req, res) => {
 //user clicks dashboard, gets the user's blogposts add this logic
 router.get('/blog/:id', async (req, res) => {
   try {
-    const blogData = await Blog.findByPk(req.params.id, {
+    const blogData = await Blog.findByPk(req.params.id,
+      {
       include: [ { model: User,
           attributes: ['name'], },
         { model: Comment,
-        attributes: ['description', 'date_created'] } ],
+        attributes: ['id','user_id', 'description', 'date_created'] } ],
     });
 
     const blog = blogData.get({ plain: true });
